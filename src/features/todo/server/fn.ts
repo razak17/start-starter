@@ -10,19 +10,19 @@ export const getTodosFn = createServerFn({ method: 'GET' }).handler(
 )
 
 export const createTodoFn = createServerFn({ method: 'POST' })
-  .inputValidator((data: { title: string }) => data)
+  .validator((data: { title: string }) => data)
   .handler(async ({ data: { title } }) => {
     return await createTodo({ title })
   })
 
 export const toggleTodoFn = createServerFn({ method: 'POST' })
-  .inputValidator((data: { id: number; completed: boolean }) => data)
+  .validator((data: { id: number; completed: boolean }) => data)
   .handler(async ({ data: { id, completed } }) => {
     return await toggleTodo({ id, completed })
   })
 
 export const deleteTodoFn = createServerFn({ method: 'POST' })
-  .inputValidator((data: { id: number }) => data)
+  .validator((data: { id: number }) => data)
   .handler(async ({ data: { id } }) => {
     return await deleteTodo({ id })
   })

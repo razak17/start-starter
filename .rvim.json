@@ -12,6 +12,12 @@
       }
     }
   },
+  "formatter": {
+    "typescript": {
+      "biome-check": true,
+      "prettier": false
+    }
+  },
   "explorer": {
     "variant": "neo-tree"
   }
